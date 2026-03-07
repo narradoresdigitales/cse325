@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "dgSpecHash": "NY/6f1dM35o=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\narra\\OneDrive\\Documentos\\BYU_I\\cse325\\mslearn-dotnet-files\\mslearn-dotnet-files.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\narra\\.nuget\\packages\\newtonsoft.json\\13.0.4\\newtonsoft.json.13.0.4.nupkg.sha512",
+    "C:\\Users\\narra\\.nuget\\packages\\microsoft.netcore.app.ref\\8.0.24\\microsoft.netcore.app.ref.8.0.24.nupkg.sha512",
+    "C:\\Users\\narra\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\8.0.24\\microsoft.windowsdesktop.app.ref.8.0.24.nupkg.sha512",
+    "C:\\Users\\narra\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\8.0.24\\microsoft.aspnetcore.app.ref.8.0.24.nupkg.sha512",
+    "C:\\Users\\narra\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\8.0.24\\microsoft.netcore.app.host.win-x64.8.0.24.nupkg.sha512"
+  ],
+  "logs": []
+}

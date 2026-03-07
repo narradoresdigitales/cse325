@@ -1,0 +1,14 @@
+C:\Users\narra\OneDrive\Documentos\BYU_I\cse325\DotNetDebugging\bin\Debug\net10.0\DotNetDebugging.exe
+C:\Users\narra\OneDrive\Documentos\BYU_I\cse325\DotNetDebugging\bin\Debug\net10.0\DotNetDebugging.deps.json
+C:\Users\narra\OneDrive\Documentos\BYU_I\cse325\DotNetDebugging\bin\Debug\net10.0\DotNetDebugging.runtimeconfig.json
+C:\Users\narra\OneDrive\Documentos\BYU_I\cse325\DotNetDebugging\bin\Debug\net10.0\DotNetDebugging.dll
+C:\Users\narra\OneDrive\Documentos\BYU_I\cse325\DotNetDebugging\bin\Debug\net10.0\DotNetDebugging.pdb
+C:\Users\narra\OneDrive\Documentos\BYU_I\cse325\DotNetDebugging\obj\Debug\net10.0\DotNetDebugging.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\narra\OneDrive\Documentos\BYU_I\cse325\DotNetDebugging\obj\Debug\net10.0\DotNetDebugging.AssemblyInfoInputs.cache
+C:\Users\narra\OneDrive\Documentos\BYU_I\cse325\DotNetDebugging\obj\Debug\net10.0\DotNetDebugging.AssemblyInfo.cs
+C:\Users\narra\OneDrive\Documentos\BYU_I\cse325\DotNetDebugging\obj\Debug\net10.0\DotNetDebugging.csproj.CoreCompileInputs.cache
+C:\Users\narra\OneDrive\Documentos\BYU_I\cse325\DotNetDebugging\obj\Debug\net10.0\DotNetDebugging.dll
+C:\Users\narra\OneDrive\Documentos\BYU_I\cse325\DotNetDebugging\obj\Debug\net10.0\refint\DotNetDebugging.dll
+C:\Users\narra\OneDrive\Documentos\BYU_I\cse325\DotNetDebugging\obj\Debug\net10.0\DotNetDebugging.pdb
+C:\Users\narra\OneDrive\Documentos\BYU_I\cse325\DotNetDebugging\obj\Debug\net10.0\DotNetDebugging.genruntimeconfig.cache
+C:\Users\narra\OneDrive\Documentos\BYU_I\cse325\DotNetDebugging\obj\Debug\net10.0\ref\DotNetDebugging.dll

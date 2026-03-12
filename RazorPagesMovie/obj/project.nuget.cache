@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "k2gVWZO/uMI=",
+  "dgSpecHash": "cVOnGYVn8Rk=",
   "success": true,
   "projectFilePath": "C:\\Users\\narra\\OneDrive\\Documentos\\BYU_I\\cse325\\RazorPagesMovie\\RazorPagesMovie.csproj",
   "expectedPackageFiles": [
@@ -87,6 +87,7 @@
     "C:\\Users\\narra\\.nuget\\packages\\microsoft.entityframeworkcore.sqlserver\\10.0.3\\microsoft.entityframeworkcore.sqlserver.10.0.3.nupkg.sha512",
     "C:\\Users\\narra\\.nuget\\packages\\microsoft.entityframeworkcore.tools\\10.0.3\\microsoft.entityframeworkcore.tools.10.0.3.nupkg.sha512",
     "C:\\Users\\narra\\.nuget\\packages\\microsoft.extensions.dependencymodel\\10.0.3\\microsoft.extensions.dependencymodel.10.0.3.nupkg.sha512",
+    "C:\\Users\\narra\\.nuget\\packages\\microsoft.extensions.validation\\10.0.1\\microsoft.extensions.validation.10.0.1.nupkg.sha512",
     "C:\\Users\\narra\\.nuget\\packages\\microsoft.identity.client\\4.73.1\\microsoft.identity.client.4.73.1.nupkg.sha512",
     "C:\\Users\\narra\\.nuget\\packages\\microsoft.identity.client.extensions.msal\\4.73.1\\microsoft.identity.client.extensions.msal.4.73.1.nupkg.sha512",
     "C:\\Users\\narra\\.nuget\\packages\\microsoft.identitymodel.abstractions\\7.7.1\\microsoft.identitymodel.abstractions.7.7.1.nupkg.sha512",
@@ -136,5 +137,18 @@
     "C:\\Users\\narra\\.nuget\\packages\\system.security.cryptography.pkcs\\9.0.4\\system.security.cryptography.pkcs.9.0.4.nupkg.sha512",
     "C:\\Users\\narra\\.nuget\\packages\\system.security.cryptography.protecteddata\\9.0.6\\system.security.cryptography.protecteddata.9.0.6.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1510",
+      "level": "Warning",
+      "message": "PackageReference Microsoft.Extensions.Validation will not be pruned. Consider removing this package from your dependencies, as it is likely unnecessary.",
+      "projectPath": "C:\\Users\\narra\\OneDrive\\Documentos\\BYU_I\\cse325\\RazorPagesMovie\\RazorPagesMovie.csproj",
+      "warningLevel": 1,
+      "filePath": "C:\\Users\\narra\\OneDrive\\Documentos\\BYU_I\\cse325\\RazorPagesMovie\\RazorPagesMovie.csproj",
+      "libraryId": "Microsoft.Extensions.Validation",
+      "targetGraphs": [
+        "net10.0"
+      ]
+    }
+  ]
 }

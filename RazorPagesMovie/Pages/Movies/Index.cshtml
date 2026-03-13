@@ -2,24 +2,29 @@
 @model RazorPagesMovie.Pages_Movies.IndexModel
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "My Movies";
 }
 
-<h1>Index</h1>
+<h1>My Movies</h1>
 
 <p>
     <a asp-page="Create">Create New</a>
 </p>
 
-<form>
-    <p>
-        <select asp-for="MovieGenre" asp-items="Model.Genres">
-            <option value="">All</option>
-        </select>
-        <label>Title: <input type="text" asp-for="SearchString" /></label>
-        <input type="submit" value="Filter" />
-    </p>
-</form>
+<div class="movie-form"> 
+    <form>
+        <p>
+            <select asp-for="MovieGenre" asp-items="Model.Genres">
+                <option value="">All</option>
+            </select>
+            <label>Title: <input type="text" asp-for="SearchString" /></label>
+
+            <label>Year: <input type="number" asp-for="SearchYear" /></label>
+            
+            <input type="submit" value="Filter" />
+        </p>
+    </form>
+</div>
 
 <table class="table">
     <thead>
@@ -58,7 +63,8 @@
                 @Html.DisplayFor(modelItem => item.Price)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Rating) 
+                @Html.DisplayFor(modelItem => item.Rating)
+            </td> 
             <td>
                 <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
                 <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |

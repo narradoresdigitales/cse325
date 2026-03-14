@@ -1,4 +1,5 @@
-﻿@page "/counter"
+﻿@page "/counter/{InitialCount:int?}"
+@page "/counter2"
 @rendermode InteractiveServer
 
 <PageTitle>Counter</PageTitle>
@@ -9,25 +10,30 @@
 
 <button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
 
-@if (currentCount > 5)
-{
-    <p>You've clicked the button more than 5 times!</p>
-}
+<p>Initial count=@InitialCount</p>
 
-<ul> 
-@for (int i = 0; i < currentCount; i++)
-{
-    <li>Clicked!</li>
-}
-</ul>
+
 
 @code {
     private int currentCount = 0;
-    
+
+    protected override void OnInitialized()
+    {
+        currentCount = InitialCount;
+    }
+
+    // Make this int and initialize to 0 to avoid CS8618
+    [Parameter]
+    public int InitialCount { get; set; }
+
+    // Add IncrementAmount parameter so IncrementCount can use it
     [Parameter]
     public int IncrementAmount { get; set; } = 1;
+
+
+
     private void IncrementCount()
     {
-        currentCount+= IncrementAmount;
+        currentCount += IncrementAmount;
     }
 }

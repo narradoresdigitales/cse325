@@ -1,7 +1,14 @@
 ﻿@page "/"
+@using BlazorApp1.Components.Pages
 
 <PageTitle>Home</PageTitle>
 
 <h1>Great job, Sil!</h1>
 
 Welcome to your new app.
+
+@{
+    var amount = 2+4;
+}
+
+<Counter IncrementAmount="amount" />

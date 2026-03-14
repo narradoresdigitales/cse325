@@ -9,11 +9,25 @@
 
 <button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
 
+@if (currentCount > 5)
+{
+    <p>You've clicked the button more than 5 times!</p>
+}
+
+<ul> 
+@for (int i = 0; i < currentCount; i++)
+{
+    <li>Clicked!</li>
+}
+</ul>
+
 @code {
     private int currentCount = 0;
-
+    
+    [Parameter]
+    public int IncrementAmount { get; set; } = 1;
     private void IncrementCount()
     {
-        currentCount++;
+        currentCount+= IncrementAmount;
     }
 }

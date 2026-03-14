@@ -12,25 +12,19 @@
 
 <p>Initial count=@InitialCount</p>
 
-
-
 @code {
-    private int currentCount = 0;
+    private int currentCount;
+
+    [Parameter]
+    public int InitialCount { get; set; } = 0;
+
+    [Parameter]
+    public int IncrementAmount { get; set; } = 1;
 
     protected override void OnInitialized()
     {
         currentCount = InitialCount;
     }
-
-    // Make this int and initialize to 0 to avoid CS8618
-    [Parameter]
-    public int InitialCount { get; set; }
-
-    // Add IncrementAmount parameter so IncrementCount can use it
-    [Parameter]
-    public int IncrementAmount { get; set; } = 1;
-
-
 
     private void IncrementCount()
     {

@@ -1,0 +1,33 @@
+<h3>Component Example</h3>
+
+<p>Current count: @currentCount</p>
+
+<input type="number" @bind="currentCount" />
+
+<button class="btn btn-primary" @onclick="IncrementCount">Increment</button>
+
+@code {
+       private int currentCount = 0;
+
+       [Parameter]
+       public int InitialCount { get; set; } = 0;
+
+       [Parameter]
+       public int IncrementAmount { get; set; } = 1;
+
+       protected override void OnInitialized()
+       {
+              currentCount = InitialCount;
+       }
+
+    private void IncrementCount()
+    {
+        currentCount += IncrementAmount;
+    }
+
+    // If you want to handle onchange manually, you can define this:
+    // private void OnChange(ChangeEventArgs e)
+    // {
+    //     currentCount = int.Parse(e.Value?.ToString() ?? "0");
+    // }
+}

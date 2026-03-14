@@ -46,6 +46,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xOb3RGb3VuZC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/narra/OneDrive/Documentos/BYU_I/cse325/BlazorApp1/BlazorApp1/Components/Pages/Todo.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xUb2RvLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/narra/OneDrive/Documentos/BYU_I/cse325/BlazorApp1/BlazorApp1/Components/Pages/Weather.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xXZWF0aGVyLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 

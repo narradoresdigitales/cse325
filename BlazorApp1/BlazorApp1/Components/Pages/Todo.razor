@@ -1,0 +1,28 @@
+@page "/todo"   
+
+<h3>Todo</h3>
+
+<ul>
+    @foreach (var item in todoItems)
+    {
+        <li>
+            <input type="checkbox" checked="@item.IsCompleted" />
+            @item.Title
+        </li>
+    }
+</ul>
+
+@code {
+
+    List<TodoItem> todoItems = new List<TodoItem>
+    {
+        new TodoItem { Title = "Buy groceries", IsCompleted = false },
+        new TodoItem { Title = "Walk the dog", IsCompleted = true },
+        new TodoItem { Title = "Finish Blazor project", IsCompleted = false }
+    };
+    public class TodoItem
+    {
+        public string Title { get; set; }
+        public bool IsCompleted { get; set; }
+    }
+}

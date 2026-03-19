@@ -34,5 +34,5 @@ using (var scope = scopeFactory.CreateScope())
         SeedData.Initialize(db);
     }
 }
-
+Console.WriteLine("DB FULL PATH: " + Path.GetFullPath("pizza.db"));
 app.Run();

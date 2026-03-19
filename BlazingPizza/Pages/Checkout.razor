@@ -1,8 +1,9 @@
 @page "/checkout"
 @inject OrderState OrderState
-@inject HttpClient HttpClient
+@inject HttpClient Http
 @inject NavigationManager NavigationManager
 @using BlazingPizza.Services
+
 
 
 <div class="top-bar">
@@ -10,38 +11,35 @@
         <img src="img/logo.svg" />
     </a>
 
-    <a href="" class="nav-tab">
+    <a href="" class="nav-tab active" >
         <img src="img/pizza-slice.svg" />
         <div>Get Pizza</div>
-    </a>
-
+    </a>   
 </div>
 
 <div class="main">
-    <div class="checkout-cols">
-        <div class="checkout-order-details">
-            <h4>Review order</h4>
-            @foreach (var pizza in Order.Pizzas)
-            {
-                <p>
-                    <strong>
-                        @(pizza.Size)"
-                        @pizza.Special.Name
-                        (£@pizza.GetFormattedTotalPrice())
-                    </strong>
-                </p>
-            }
-
+    <div class="checkout-order-details">
+        <h4>Review order</h4>
+        @foreach (var pizza in Order.Pizzas)
+        {
             <p>
                 <strong>
-                    Total price:
-                    £@Order.GetFormattedTotalPrice()
+                    @(pizza.Size)"
+                    @pizza.Special.Name
+                    (£@pizza.GetFormattedTotalPrice())
                 </strong>
             </p>
-        </div>
+        }
+
+        <p>
+            <strong>
+                Total price:
+                £@Order.GetFormattedTotalPrice()
+            </strong>
+        </p>
     </div>
 
-    <button class="checkout-button btn btn-warning" @onclick="PlaceOrder" disabled="isSubmitting">
+    <button class="checkout-button btn btn-warning" @onclick="PlaceOrder" disabled="@isSubmitting">
         Place order
     </button>
 </div>
@@ -49,17 +47,36 @@
 @code {
     Order Order => OrderState.Order;
 
-    bool isSubmitting;
+    bool isSubmitting = false;
 
-    
     async Task PlaceOrder()
     {
-        isSubmitting = true;
-        var response = await HttpClient.PostAsJsonAsync(NavigationManager.BaseUri + "orders", OrderState.Order);
-        var newOrderId= await response.Content.ReadFromJsonAsync<int>();
-        OrderState.ResetOrder();
-        NavigationManager.NavigateTo("/");
+        try
+        {
+            isSubmitting = true;
+
+            var url = NavigationManager.ToAbsoluteUri("orders"); // FIX: absolute URL
+            var response = await Http.PostAsJsonAsync(url, Order);
+
+            if (response.IsSuccessStatusCode)
+            {
+                var newOrderId = await response.Content.ReadFromJsonAsync<int>();
+                Console.WriteLine($"Order placed successfully! OrderId: {newOrderId}");
+                OrderState.ResetOrder();
+                NavigationManager.NavigateTo("/");
+            }
+            else
+            {
+                Console.WriteLine($"Failed to place order. Status code: {response.StatusCode}");
+            }
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Exception placing order: {ex.Message}");
+        }
+        finally
+        {
+            isSubmitting = false;
+        }
     }
-
-
 }

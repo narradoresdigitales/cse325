@@ -5,18 +5,6 @@
 @using BlazingPizza.Services
 
 
-
-<div class="top-bar">
-    <a class="logo" href="">
-        <img src="img/logo.svg" />
-    </a>
-
-    <a href="" class="nav-tab active" >
-        <img src="img/pizza-slice.svg" />
-        <div>Get Pizza</div>
-    </a>   
-</div>
-
 <div class="main">
     <div class="checkout-order-details">
         <h4>Review order</h4>
@@ -54,7 +42,6 @@
         try
         {
             isSubmitting = true;
-
             var url = NavigationManager.ToAbsoluteUri("orders"); // FIX: absolute URL
             var response = await Http.PostAsJsonAsync(url, Order);
 
@@ -63,7 +50,7 @@
                 var newOrderId = await response.Content.ReadFromJsonAsync<int>();
                 Console.WriteLine($"Order placed successfully! OrderId: {newOrderId}");
                 OrderState.ResetOrder();
-                NavigationManager.NavigateTo("/");
+                NavigationManager.NavigateTo("/myorders/{newOrderId}"); 
             }
             else
             {

@@ -31,12 +31,12 @@ namespace BlazingPizza
 
         public decimal GetTotalPrice()
         {
-            return GetBasePrice();
+            return GetBasePrice(); 
         }
 
         public string GetFormattedTotalPrice()
         {
-            return GetTotalPrice().ToString("C");
+            return GetTotalPrice().ToString("0.00");
         }
     }
 }

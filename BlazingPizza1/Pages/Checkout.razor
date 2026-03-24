@@ -1,0 +1,69 @@
+@page "/checkout"
+@inject OrderState OrderState
+@inject HttpClient Http
+@inject NavigationManager NavigationManager
+@using BlazingPizza.Services
+
+
+<div class="main">
+    <div class="checkout-order-details">
+        <h4>Review order</h4>
+        @foreach (var pizza in Order.Pizzas)
+        {
+            <p>
+                <strong>
+                    @(pizza.Size)"
+                    @pizza.Special.Name
+                    (@pizza.GetFormattedTotalPrice())
+                </strong>
+            </p>
+        }
+
+        <p>
+            <strong>
+                Total price:
+                @Order.GetFormattedTotalPrice()
+            </strong>
+        </p>
+    </div>
+
+    <button class="checkout-button btn btn-warning" @onclick="PlaceOrder" disabled="@isSubmitting">
+        Place order
+    </button>
+</div>
+
+@code {
+    Order Order => OrderState.Order;
+
+    bool isSubmitting = false;
+
+    async Task PlaceOrder()
+    {
+        try
+        {
+            isSubmitting = true;
+            var url = NavigationManager.ToAbsoluteUri("orders"); // FIX: absolute URL
+            var response = await Http.PostAsJsonAsync(url, Order);
+
+            if (response.IsSuccessStatusCode)
+            {
+                var newOrderId = await response.Content.ReadFromJsonAsync<int>();
+                Console.WriteLine($"Order placed successfully! OrderId: {newOrderId}");
+                OrderState.ResetOrder();
+                NavigationManager.NavigateTo("/myorders/{newOrderId}"); 
+            }
+            else
+            {
+                Console.WriteLine($"Failed to place order. Status code: {response.StatusCode}");
+            }
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Exception placing order: {ex.Message}");
+        }
+        finally
+        {
+            isSubmitting = false;
+        }
+    }
+}

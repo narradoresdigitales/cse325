@@ -1,21 +1,19 @@
-using BlazingPizza.Data;
-using BlazingPizza.Services;
-using System.Globalization;
-
-var culture = new CultureInfo("en-US");
-CultureInfo.DefaultThreadCurrentCulture = culture;
-CultureInfo.DefaultThreadCurrentUICulture = culture;
+using BlazingPizza;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
+// Add services to the container.
 builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
 builder.Services.AddHttpClient();
-builder.Services.AddSqlite<PizzaStoreContext>("Data Source=pizza.db");
+builder.Services.AddDbContext<PizzaStoreContext>(options => 
+    options.UseSqlite("Data Source=pizza.db"));
 builder.Services.AddScoped<OrderState>();
 
 var app = builder.Build();
 
+// Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Error");
@@ -39,5 +37,5 @@ using (var scope = scopeFactory.CreateScope())
         SeedData.Initialize(db);
     }
 }
-Console.WriteLine("DB FULL PATH: " + Path.GetFullPath("pizza.db"));
+
 app.Run();

@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>My.FirstClassLibrary</id>
+    <version>0.1.0</version>
+    <authors>Marcus 'Sil' Palmer</authors>
+    <description>This is a Razor component library with a cool modal window component.</description>
+    <repository type="git" commit="c2762eba975659acc8d2a67ea5ab37bcaefff593" />
+    <dependencies>
+      <group targetFramework="net8.0" />
+    </dependencies>
+    <frameworkReferences>
+      <group targetFramework="net8.0">
+        <frameworkReference name="Microsoft.AspNetCore.App" />
+      </group>
+    </frameworkReferences>
+    <contentFiles>
+      <files include="any/net8.0/appsettings.Development.json" buildAction="Content" />
+      <files include="any/net8.0/appsettings.json" buildAction="Content" />
+    </contentFiles>
+  </metadata>
+  <files>
+    <file src="C:\Users\narra\OneDrive\Documentos\BYU_I\cse325\MyBlazorApp\bin\Release\net8.0\MyBlazorApp.runtimeconfig.json" target="lib\net8.0\MyBlazorApp.runtimeconfig.json" />
+    <file src="C:\Users\narra\OneDrive\Documentos\BYU_I\cse325\MyBlazorApp\bin\Release\net8.0\MyBlazorApp.dll" target="lib\net8.0\MyBlazorApp.dll" />
+    <file src="C:\Users\narra\OneDrive\Documentos\BYU_I\cse325\MyBlazorApp\appsettings.Development.json" target="content\appsettings.Development.json" />
+    <file src="C:\Users\narra\OneDrive\Documentos\BYU_I\cse325\MyBlazorApp\appsettings.Development.json" target="contentFiles\any\net8.0\appsettings.Development.json" />
+    <file src="C:\Users\narra\OneDrive\Documentos\BYU_I\cse325\MyBlazorApp\appsettings.json" target="content\appsettings.json" />
+    <file src="C:\Users\narra\OneDrive\Documentos\BYU_I\cse325\MyBlazorApp\appsettings.json" target="contentFiles\any\net8.0\appsettings.json" />
+    <file src="C:\Users\narra\OneDrive\Documentos\BYU_I\cse325\MyBlazorApp\obj\Release\net8.0\scopedcss\bundle\My.FirstClassLibrary.styles.css" target="staticwebassets\My.FirstClassLibrary.styles.css" />
+    <file src="C:\Users\narra\OneDrive\Documentos\BYU_I\cse325\MyBlazorApp\wwwroot\app.css" target="staticwebassets\app.css" />
+    <file src="C:\Users\narra\OneDrive\Documentos\BYU_I\cse325\MyBlazorApp\wwwroot\bootstrap\bootstrap.min.css" target="staticwebassets\bootstrap\bootstrap.min.css" />
+    <file src="C:\Users\narra\OneDrive\Documentos\BYU_I\cse325\MyBlazorApp\wwwroot\bootstrap\bootstrap.min.css.map" target="staticwebassets\bootstrap\bootstrap.min.css.map" />
+    <file src="C:\Users\narra\OneDrive\Documentos\BYU_I\cse325\MyBlazorApp\wwwroot\favicon.png" target="staticwebassets\favicon.png" />
+    <file src="C:\Users\narra\OneDrive\Documentos\BYU_I\cse325\MyBlazorApp\obj\Release\net8.0\staticwebassets\msbuild.My.FirstClassLibrary.Microsoft.AspNetCore.StaticWebAssetEndpoints.props" target="build\Microsoft.AspNetCore.StaticWebAssetEndpoints.props" />
+    <file src="C:\Users\narra\OneDrive\Documentos\BYU_I\cse325\MyBlazorApp\obj\Release\net8.0\staticwebassets\msbuild.My.FirstClassLibrary.Microsoft.AspNetCore.StaticWebAssets.props" target="build\Microsoft.AspNetCore.StaticWebAssets.props" />
+    <file src="C:\Users\narra\OneDrive\Documentos\BYU_I\cse325\MyBlazorApp\obj\Release\net8.0\staticwebassets\msbuild.build.My.FirstClassLibrary.props" target="build\My.FirstClassLibrary.props" />
+    <file src="C:\Users\narra\OneDrive\Documentos\BYU_I\cse325\MyBlazorApp\obj\Release\net8.0\staticwebassets\msbuild.buildMultiTargeting.My.FirstClassLibrary.props" target="buildMultiTargeting\My.FirstClassLibrary.props" />
+    <file src="C:\Users\narra\OneDrive\Documentos\BYU_I\cse325\MyBlazorApp\obj\Release\net8.0\staticwebassets\msbuild.buildTransitive.My.FirstClassLibrary.props" target="buildTransitive\My.FirstClassLibrary.props" />
+  </files>
+</package>

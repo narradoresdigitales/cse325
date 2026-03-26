@@ -1,0 +1,56 @@
+@inject GameState State
+
+<HeadContent>
+    <style>
+        :root {
+            --board-bg: yellow;  /** the color of the board **/
+            --player1: red;      /** Player 1's piece color **/
+            --player2: blue;     /** Player 2's piece color **/
+        }
+    </style>
+</HeadContent>
+
+
+
+<h3>Board</h3>
+
+<nav>
+    @for (byte i = 0; i < 7; i++)
+    {
+        var col = i;
+        <span title="Click to play a piece" @onclick="() => PlayPiece(col)">🔽</span>
+    }
+</nav>
+
+@for (var i = 0; i < 42; i++)
+{
+    <span class="@pieces[i]"></span>
+}
+<div>
+    <div class="board">
+        @for (var i = 0; i < 42; i++)
+        {
+            <span class="container">
+                <span></span>
+            </span>
+        }
+    </div>
+</div>
+@code {
+    private string[] pieces = new string[42];
+    protected override void OnInitialized()
+    {
+        State.ResetBoard();
+    }
+
+    private void PlayPiece(byte col)
+    {
+        var player = State.PlayerTurn;
+        var turn = State.CurrentTurn;
+        var landingRow = State.PlayPiece(col);
+        pieces[turn] = $"player{player} col{col} drop{landingRow}";
+    }
+
+
+
+}

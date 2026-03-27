@@ -31,4 +31,4 @@ C:\Users\narra\OneDrive\Documentos\BYU_I\cse325\ConnectFour\obj\Debug\net8.0\ref
 C:\Users\narra\OneDrive\Documentos\BYU_I\cse325\ConnectFour\obj\Debug\net8.0\ConnectFour.pdb
 C:\Users\narra\OneDrive\Documentos\BYU_I\cse325\ConnectFour\obj\Debug\net8.0\ConnectFour.genruntimeconfig.cache
 C:\Users\narra\OneDrive\Documentos\BYU_I\cse325\ConnectFour\obj\Debug\net8.0\ref\ConnectFour.dll
-C:\Users\narra\OneDrive\Documentos\BYU_I\cse325\ConnectFour\obj\Debug\net8.0\scopedcss\Components\Pages\Board.razor.rz.scp.css
+C:\Users\narra\OneDrive\Documentos\BYU_I\cse325\ConnectFour\obj\Debug\net8.0\scopedcss\Components\Board.razor.rz.scp.css

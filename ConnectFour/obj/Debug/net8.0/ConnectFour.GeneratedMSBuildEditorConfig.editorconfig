@@ -50,6 +50,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xfSW1wb3J0cy5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/narra/OneDrive/Documentos/BYU_I/cse325/ConnectFour/Components/Board.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xCb2FyZC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-2hsj6j6moh
+
 [C:/Users/narra/OneDrive/Documentos/BYU_I/cse325/ConnectFour/Components/Layout/MainLayout.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xMYXlvdXRcTWFpbkxheW91dC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = b-dzoor4i9v5
@@ -57,7 +61,3 @@ build_metadata.AdditionalFiles.CssScope = b-dzoor4i9v5
 [C:/Users/narra/OneDrive/Documentos/BYU_I/cse325/ConnectFour/Components/Layout/NavMenu.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xMYXlvdXRcTmF2TWVudS5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = b-4risrr6esb
-
-[C:/Users/narra/OneDrive/Documentos/BYU_I/cse325/ConnectFour/Components/Pages/Board.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xCb2FyZC5yYXpvcg==
-build_metadata.AdditionalFiles.CssScope = b-70fjnt1oqj

@@ -1,13 +1,18 @@
 @inject GameState State
-
+@using System.Drawing 
 
 
 
 
 <h3>Board</h3>
 <article>
-    @winnerMessage  <button style="@ResetStyle" @onclick="ResetGame">Reset the game</button>
+    @if (!string.IsNullOrEmpty(winnerMessage))
+    {
+        <span class="celebrate">@winnerMessage</span>
+    }
+    <button style="@ResetStyle" @onclick="ResetGame">Reset the game</button>
     <br />
+    <button @onclick="UndoMove" disabled="@(!pieces.Any(p => !string.IsNullOrEmpty(p)))">Undo</button>
     <span class="alert-danger">@errorMessage</span>
     <span class="alert-info">@CurrentTurn</span>
 </article>
@@ -23,9 +28,9 @@
 <HeadContent>
     <style>
         :root {
-            --board-bg: yellow;  /** the color of the board **/
-            --player1: red;      /** Player 1's piece color **/
-            --player2: blue;     /** Player 2's piece color **/
+            --board-bg: @ColorTranslator.ToHtml(BoardColor);      /** the color of the board **/
+            --player1: @ColorTranslator.ToHtml(Player1Color);     /** Player 1's piece color **/
+            --player2: @ColorTranslator.ToHtml(Player2Color);     /** Player 2's piece color **/
         }
     </style>
 </HeadContent>
@@ -70,6 +75,14 @@
                 errorMessage = ex.Message;
             }
         
+        winnerMessage = State.CheckForWin() switch
+        {
+            GameState.WinState.Player1_Wins => "🎉 Player 1 Wins! 🎉",
+            GameState.WinState.Player2_Wins => "🎉 Player 2 Wins! 🎉",
+            GameState.WinState.Tie => "It's a tie!",
+            _ => ""
+        };
+
 
     }
     
@@ -80,10 +93,38 @@
         errorMessage = string.Empty;
         pieces = new string[42];
     }
+
+
+    [Parameter]
+    public Color BoardColor { get; set; } = ColorTranslator.FromHtml("yellow");
+
+    [Parameter]
+    public Color Player1Color { get; set; } = ColorTranslator.FromHtml("red");
+
+    [Parameter]
+    public Color Player2Color { get; set; } = ColorTranslator.FromHtml("blue");
     protected override void OnInitialized()
     {
         State.ResetBoard();
     }
 
+    void UndoMove()
+    {
+        State.UndoMove();
+
+        // Remove last visual piece
+        for (int i = pieces.Length - 1; i >= 0; i--)
+        {
+            if (!string.IsNullOrEmpty(pieces[i]))
+            {
+                pieces[i] = string.Empty;
+                break;
+            }
+        }
+
+        // Clear messages so game can continue
+        winnerMessage = string.Empty;
+        errorMessage = string.Empty;
+    }
     
 }

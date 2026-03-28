@@ -1,8 +1,15 @@
 namespace ConnectFour;
 
+public class Move
+{
+    public int Index { get; set; }   // landing spot (0–41)
+    public int Player { get; set; }
+}
+
 public class GameState
 {
 
+	private Stack<Move> moveHistory = new();
 	static GameState()
 	{
 		CalculateWinningPlaces();
@@ -172,14 +179,33 @@ public class GameState
 
 		TheBoard[landingSpot] = PlayerTurn;
 
+		moveHistory.Push(new Move
+		{
+			Index = landingSpot,
+			Player = PlayerTurn
+		});
+
 		return ConvertLandingSpotToRow(landingSpot);
 
+		
+
+	}
+
+	public void UndoMove()
+	{
+		if (moveHistory.Count == 0)
+			return;
+
+		var lastMove = moveHistory.Pop();
+
+		TheBoard[lastMove.Index] = 0;
 	}
 
 	public List<int> TheBoard { get; private set; } = new List<int>(new int[42]);
 
 	public void ResetBoard() {
 		TheBoard = new List<int>(new int[42]);
+		moveHistory.Clear();
 	}
 
 	private byte ConvertLandingSpotToRow(int landingSpot)
